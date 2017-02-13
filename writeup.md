@@ -43,7 +43,7 @@
 #### 3.2- Model Architecture (step 2.2 in Traffic_Sign_Classifier.ipynb )
 #### The submission provides details of the characteristics and qualities of the architecture, such as the type of model used, the number of layers, the size of each layer. Visualizations emphasizing particular qualities of the architecture are encouraged.
   
-![](output_images/section2_2.JPG)  
+![](output_images/section2_2.jpg)  
 Just like the image bove, I selected LeNet as train model.  
 * Layer 1- Convolutional: Input = 32x32x1, Output = 28x28x6. Activation. Pooling: Input = 28x28x6, Output = 14x14x6.  
 * Layer 2- Convolutional: Output = 10x10x16. Activation. Pooling: Input = 10x10x16, Output = 5x5x16. Flatten: Input = 5x5x16, Output = 400.  
@@ -79,8 +79,7 @@ Just like the image bove, I selected LeNet as train model.
 #### The submission documents the performance of the model when tested on the captured images. The performance on the new images is compared to the accuracy results of the test set.
   
 ![](output_images/section3_3_1.JPG)  
-
-![](output_images/section3_3_2.JPG)  
+![](output_images/section3_3_2.jpg)  
 Just like I mention earlier, the result really makes me surprised. Maybe I shall try to add gray function into the model next time.  
   
 #### 4.3- Model Certainty - Softmax Probabilities (step 3.3 in Traffic_Sign_Classifier.ipynb )
