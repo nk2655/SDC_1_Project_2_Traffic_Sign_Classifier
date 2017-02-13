@@ -79,6 +79,7 @@ Just like the image bove, I selected LeNet as train model.
 #### The submission documents the performance of the model when tested on the captured images. The performance on the new images is compared to the accuracy results of the test set.
   
 ![](output_images/section3_3_1.JPG)  
+
 ![](output_images/section3_3_2.JPG)  
 Just like I mention earlier, the result really makes me surprised. Maybe I shall try to add gray function into the model next time.  
   
