@@ -53,9 +53,9 @@ Just like the image bove, I selected LeNet as train model.
   
 #### 3.3- Model Training (step 2.3 in Traffic_Sign_Classifier.ipynb )
 #### The submission describes how the model was trained by discussing what optimizer was used, batch size, number of epochs and values for hyperparameters.
-* epochs = 100, batch size = 128, keep probability = 0.5, learning rate=0.001, ,decay steps=10000, decay rate=0.96.  
+* epochs = 66, batch size = 128, keep probability = 0.5, learning rate=0.001, ,decay steps=10000, decay rate=0.96.  
 * AdamOptimizer because it is faster than SGD.  
-* Validation Accuracy = 99.2%, Test Accuracy = 94.9%. Epochs between 50 to 100 will get best accuracy.  
+* Validation Accuracy = 99.1%, Test Accuracy = 93.6%. Epochs between 50 to 100 will get best accuracy, 66 is the first epoch to reached best validation accuracy.  
 * No L2 regulation since I have used drop out that is use to solve overfitting as well.  
 * No batch normalization because I have used Relu, this activation is better then Sigmoid, it will not gradient vanishing or explosion.  
   
@@ -63,8 +63,13 @@ Just like the image bove, I selected LeNet as train model.
 #### The project thoroughly discusses the approach taken for deriving and designing a model architecture fit for solving the problem given.
   
 * Just like I mentioned earlier, I started with LeNet to training data.  
+* This project is a standard image classification problem. The lenet is a proven model for the same - and goes beyond a standard feedforward network. Thus I decided to leverage the lenet architecture; update activation layers to relu; then focus on removing overfitting by using dropout.    
+* Training cost over multiple iterations of a dataset are least for Adam when implemented with Relu AND and dropout regularization, it is a very efficient optimizer.  
+* ConvNet architectures make the explicit assumption that the inputs are images, which allows us to encode certain properties into the architecture. These then make the forward function more efficient to implement and vastly reduce the amount of parameters in the network. Since we are dealing with Images in this problem I choose to go with Convolutional layers.   
+* The standard LeNet architecture to get the layer size, the number of neurons, etc.  
+* Adding a dropout layer (or a couple) reduce overfitting of the model, it also can force your model learn alternative paths to identify the images, increasing the robustness while preventing overfitting.  
 * I got a bad accuracy, then I modify hyperparameter, such as epochs = 200, it falls into overfitting.  
-* After tried different combined of parameters, test accuracy is reached to 94.9%.  
+* After tried different combined of parameters, test accuracy is reached to 93.6%.  
   
   
 ### 4- Test a Model on New Images
@@ -73,11 +78,12 @@ Just like the image bove, I selected LeNet as train model.
   
 ![](output_images/section3_2.JPG)  
 * I think some images might be difficult to classify it since it does not particular stick out, such as the yellow sign.  
-* But the result makes me surprise, stop sign can't be recognized but the predicting probability is 56% from a confused image.  
+* But the result makes me surprise, stop sign can't be recognized.  
   
 #### 4.2- Performance on New Images (step 3.3 in Traffic_Sign_Classifier.ipynb )
 #### The submission documents the performance of the model when tested on the captured images. The performance on the new images is compared to the accuracy results of the test set.
   
+Accuracy of the extra images is 33.3%.   
 ![](output_images/section3_3_1.JPG)  
 ![](output_images/section3_3_2.jpg)  
 Just like I mention earlier, the result really makes me surprised. Maybe I shall try to add gray function into the model next time.  
